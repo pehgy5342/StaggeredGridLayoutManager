@@ -26,7 +26,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         val pAdapter = ProductAdapter()
 
+        //設置瀑布流的行數以及方向
         recyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+
+        //使其不會交錯移動
         (recyclerView.layoutManager as StaggeredGridLayoutManager).gapStrategy = StaggeredGridLayoutManager.GAP_HANDLING_NONE
 
         recyclerView.adapter = pAdapter
